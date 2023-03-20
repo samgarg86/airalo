@@ -20,16 +20,19 @@
           <Accordion :items="tabsContent.countries" api-endpoint="countries"/>
         </TabsTabContent>
 
-        <TabsTabContent title="Regions" v-if="active === 1">
+        <LazyTabsTabContent title="Regions" v-if="active === 1">
           <Accordion :items="tabsContent.regions" api-endpoint="regions"/>
-        </TabsTabContent>
-        <TabsTabContent title="Discover Global" v-if="active === 2">
-          <div class="block" v-show="active">
-            <div class="pt-9 flex flex-wrap -mx-4">
-              <Plan v-for="p in tabsContent.world" :key="p.id" v-bind="p" :country="`${p.operator.countries.length} Countries`"/>
-            </div>
+        </LazyTabsTabContent>
+
+        <LazyTabsTabContent title="Discover Global" v-if="active === 2">
+          <div class="pt-9 flex flex-wrap -mx-4">
+            <Plan
+                v-for="p in tabsContent.world"
+                :key="p.id"
+                v-bind="p"
+                :country="`${p.operator.countries.length} Countries`"/>
           </div>
-        </TabsTabContent>
+        </LazyTabsTabContent>
       </div>
     </div>
   </div>
