@@ -10,7 +10,7 @@
     >
       <div class="flex p-4 justify-between">
         <div>
-          <h3 class="font-primary font-semibold text-lg">{{operator.title}}</h3>
+          <h3 class="font-primary font-semibold text-lg text-[1.1875rem]">{{operator.title}}</h3>
           <p class="font-primary font-medium text-xs2">{{ country }}</p>
         </div>
         <div>
@@ -30,7 +30,7 @@
             <span class="font-primary font-semibold text-[.6875rem] uppercase tracking-wider">DATA</span>
           </div>
           <div>
-            <span class="font-primary font-medium text-base uppercase tracking-tight">{{ data }}</span>
+            <span class="font-primary font-medium text-[1.0624rem] text-uppercase tracking-tight">{{ data }}</span>
           </div>
         </li>
         <li class="flex justify-between items-center border-b border-light-grey p-4">
