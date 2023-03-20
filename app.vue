@@ -2,7 +2,7 @@
   <div>
     <Header/>
     <Hero/>
-    <Countries/>
+    <Tabs/>
     <Download/>
     <Refer/>
     <Testimonials/>

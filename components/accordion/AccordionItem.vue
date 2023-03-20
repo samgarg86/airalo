@@ -14,22 +14,22 @@
   </div>
 </template>
 <script setup lang="ts">
-const props = defineProps({
-  title: String,
-  slug: String,
-  image: Object,
-  active: Boolean
-})
-const packages = ref([])
-const buttonRef = ref(null)
-const emit = defineEmits(['clicked'])
-const clicked = async () => {
-  if (!packages.value?.length) {
-    const { data } = await useFetch(`https://www.airalo.com/api/v2/countries/${props.slug}`)
-    packages.value = data.value.packages
+  const props = defineProps({
+    title: String,
+    slug: String,
+    image: Object,
+    active: Boolean,
+    apiEndpoint: String
+  })
+  const packages = ref([])
+  const buttonRef = ref(null)
+  const emit = defineEmits(['clicked'])
+  const clicked = async () => {
+    if (!packages.value?.length) {
+      const { data } = await useFetch(`https://www.airalo.com/api/v2/${props.apiEndpoint}/${props.slug}`)
+      packages.value = data.value.packages
+    }
+    emit('clicked')
+    buttonRef.value?.scrollIntoView()
   }
-  emit('clicked')
-  buttonRef.value?.scrollIntoView()
-}
-
 </script>
