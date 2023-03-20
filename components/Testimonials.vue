@@ -155,7 +155,7 @@
       <div class="swiper-pagination-bullet-active"></div>
     </div>
     <div class="text-center pt-6">
-      <a href="#" class="text-grey border border-grey rounded-md font-primary text-[.625rem] font-bold text-center inline-block px-6 py-1.5 tracking-widest uppercase transition-all hover:bg-grey hover:text-white">SHOW ALL REVIEWS</a>
+      <a href="#" class="text-grey border border-grey rounded-md font-primary text-xs font-bold text-center inline-block px-6 py-1.5 tracking-widest uppercase transition-all hover:bg-grey hover:text-white">SHOW ALL REVIEWS</a>
     </div>
   </div>
 </template>

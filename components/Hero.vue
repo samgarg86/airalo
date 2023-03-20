@@ -15,7 +15,7 @@
         </form>
         <!--./Search form-->
         <h3 class="font-primary font-medium text-white text-base mb-5">Is your device eSIM compatible?</h3>
-        <a href="#" class="text-white border border-white rounded-md font-primary text-[.625rem] font-bold text-center inline-block px-6 py-1.5 tracking-widest uppercase transition-all hover:bg-white hover:text-grey">SHOW SUPPORTED DEVICES</a>
+        <a href="#" class="text-white border border-white rounded-md font-primary text-xs font-bold text-center inline-block px-6 py-1.5 tracking-widest uppercase transition-all hover:bg-white hover:text-grey">SHOW SUPPORTED DEVICES</a>
       </div>
     </div>
     <p class="hidden lg:inline-block absolute bottom-5 left-5 font-primary font-normal text-sm text-white z-10">Shot by Lorem Ipsum | İstanbul, Turkey</p>

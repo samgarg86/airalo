@@ -45,6 +45,7 @@ module.exports = {
       'primary': ['IBM Plex Sans', 'sans-serif']
     },
     fontSize: {
+      'xs': '.625rem',
       'xs2': '.81rem',
       'xl': '1.9375rem'
     }

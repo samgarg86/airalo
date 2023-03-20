@@ -18,6 +18,15 @@
       <div>
         <TabsTabContent title="Popular Countries" v-if="active === 0">
           <Accordion :items="tabsContent.countries" api-endpoint="countries"/>
+          <div class="text-center pt-6">
+            <button
+                v-if="!isShowingAll"
+                class="text-white border border-grey bg-grey rounded-md font-primary text-xs font-bold text-center inline-block px-[4rem] py-2 tracking-widest transition-all hover:bg-white hover:text-grey"
+                @click="onShowAllClick"
+            >
+              SHOW ALL COUNTRIES
+            </button>
+          </div>
         </TabsTabContent>
 
         <LazyTabsTabContent title="Regions" v-if="active === 1">
@@ -46,8 +55,14 @@
     world: []
   })
   const active = ref(0)
+  const isShowingAll = ref(false)
   const {data: countries} = await useFetch('https://www.airalo.com/api/v2/countries?type=popular')
   tabsContent.countries = countries.value?.slice(0, 5) || []
+
+  const onShowAllClick = () => {
+    tabsContent.countries = countries.value || []
+    isShowingAll.value = true
+  }
 
   const fetchTabs = async () => {
     switch (active.value) {

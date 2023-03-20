@@ -5,7 +5,7 @@
     <Tabs/>
     <Download/>
     <Refer/>
-    <Testimonials/>
+<!--    <Testimonials/>-->
     <Footer/>
   </div>
 </template>
