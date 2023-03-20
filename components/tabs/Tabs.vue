@@ -24,7 +24,11 @@
           <Accordion :items="tabsContent.regions" api-endpoint="regions"/>
         </TabsTabContent>
         <TabsTabContent title="Discover Global" v-if="active === 2">
-          World
+          <div class="block" v-show="active">
+            <div class="pt-9 flex flex-wrap -mx-4">
+              <Plan v-for="p in tabsContent.world" :key="p.id" v-bind="p" :country="`${p.operator.countries.length} Countries`"/>
+            </div>
+          </div>
         </TabsTabContent>
       </div>
     </div>
@@ -35,7 +39,7 @@
   const tabsContent = reactive({
     countries: [],
     regions: [],
-    world: {}
+    world: []
   })
   const active = ref(0)
   const {data: countries} = await useFetch('https://www.airalo.com/api/v2/countries?type=popular')
@@ -48,10 +52,10 @@
           const {data: regions} = await useFetch('https://www.airalo.com/api/v2/regions')
           tabsContent.regions = regions.value
         }
+        break
       case 2:
-        // const { data: worldData } = await useFetch('https://www.airalo.com/api/v2/regions/world')
-        // world.value = worldData.value
-      default: return []
+        const { data: world } = await useFetch('https://www.airalo.com/api/v2/regions/world')
+        tabsContent.world = world.value.packages
     }
   }
 
