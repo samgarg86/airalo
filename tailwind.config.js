@@ -46,6 +46,7 @@ module.exports = {
     },
     fontSize: {
       'xs2': '.81rem',
+      'xl': '1.9375rem'
     }
   },
   plugins: [],

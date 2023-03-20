@@ -2,7 +2,7 @@
   <div class="bg-black bg-hero bg-center bg-cover relative bg-no-repeat">
     <div class="bg-overlay pt-[6.25rem] pb-16">
       <div class="max-w-xl m-auto px-4 text-center">
-        <h1 class="font-primary text-[1.5rem] md:text-[2.18rem] font-semibold text-white tracking-tight leading-tight mb-2">Digital SIM cards (eSIM) to save you from expensive roaming</h1>
+        <h1 class="font-primary text-[1.5rem] md:text-xl font-semibold text-white tracking-tight leading-tight mb-2">Digital SIM cards (eSIM) to save you from expensive roaming</h1>
         <p class="font-primary font-normal text-base text-white">100% prepaid data packs with no hidden fees. <a href="#" class="underline">Learn more</a></p>
         <!--Search form-->
         <form action="#" method="post">
