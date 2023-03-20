@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
+    "deploy-fb": "cd .output/server && rm -r node_modules && yarn install && cd .. && firebase deploy",
     "dev": "nuxt dev",
     "prepare": "nuxt prepare",
     "generate": "nuxt generate",
@@ -9,6 +10,9 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.1",
+    "firebase-functions-test": "^3.0.0",
     "nuxt": "^3.3.1",
     "tailwindcss": "^3.2.7"
   },
