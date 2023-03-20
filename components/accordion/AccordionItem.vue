@@ -8,7 +8,12 @@
     </button>
     <div class="block" v-show="active">
       <div class="pt-9 flex flex-wrap -mx-4">
-        <Plan v-for="p in packages" :key="p.id" v-bind="p" :country="title"/>
+        <Plan
+            v-for="p in packages"
+            :key="p.id"
+            v-bind="p"
+            :theme="apiEndpoint"
+            :country="title"/>
       </div>
     </div>
   </div>

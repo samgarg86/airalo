@@ -1,6 +1,13 @@
 <template>
   <div class="w-full sm:w-2/4 lg:w-1/3 px-4 mb-10">
-    <div class="bg-gradient-to-r from-grad-1 to-grad-2 rounded-lg shadow-lg">
+    <div
+        class="rounded-lg shadow-lg bg-gradient-to-r"
+        :class="{
+            'from-grad-1 to-grad-2': theme === 'countries',
+            'from-grad-3 to-grad-4': theme === 'regions',
+            'from-grad-5 to-grad-6': theme === 'world',
+        }"
+    >
       <div class="flex p-4 justify-between">
         <div>
           <h3 class="font-primary font-semibold text-grey text-lg">{{operator.title}}</h3>
@@ -54,6 +61,13 @@ defineProps({
   price: Number,
   data: String,
   validity: String,
-  country: String
+  country: String,
+  theme: String
 })
+
+const gradient = {
+  countries: { from: '#DCDCDC', to: '#f4f4f4'},
+  regions: { from: '#E28703', to: '#DD9B2F'},
+  world: {from: '#07053F', to: '#0988A3'}
+}
 </script>

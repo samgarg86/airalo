@@ -30,6 +30,7 @@
                 v-for="p in tabsContent.world"
                 :key="p.id"
                 v-bind="p"
+                theme="world"
                 :country="`${p.operator.countries.length} Countries`"/>
           </div>
         </LazyTabsTabContent>
@@ -57,8 +58,10 @@
         }
         break
       case 2:
-        const { data: world } = await useFetch('https://www.airalo.com/api/v2/regions/world')
-        tabsContent.world = world.value.packages
+        if (tabsContent.world.length <=0) {
+          const {data: world} = await useFetch('https://www.airalo.com/api/v2/regions/world')
+          tabsContent.world = world.value.packages
+        }
     }
   }
 

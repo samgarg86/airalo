@@ -5,7 +5,7 @@
       v-bind="item"
       :active="active === i"
       @clicked="active = i"
-      :apiEndpoint="apiEndpoint"
+      :api-endpoint="apiEndpoint"
   >
   </AccordionItem>
 </template>
@@ -13,6 +13,6 @@
 const active = ref(-1)
 defineProps({
   items: Array,
-  apiEndpoint: String,
+  apiEndpoint: String
 })
 </script>
