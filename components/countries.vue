@@ -25,14 +25,17 @@
         <!--Tab content single-->
         <div class="block">
           <h2 class="font-primary font-semibold text-grey text-[1.68rem] mb-4 mt-4">Popular Countries</h2>
-          <template v-for="country in firstFive">
-            <Country v-bind="country"/>
-          </template>
+          <Country
+              v-for="(country, index) in firstFive"
+              :key="index"
+              v-bind="country"
+              :active="active === index"
+              @clicked="clicked(index)"/>
         </div>
         <!--./Tab content single-->
         <!--Tab content single-->
         <div class="hidden">
-          <h2 class="font-primary font-semibold text-grey text-[1.68rem] mb-4 mt-4">Popular Countries</h2>
+          <h2 class="font-primary font-semibold text-grey text-[1.68rem] mb-4 mt-4">Regions</h2>
           <!--Accordion single-->
           <div class="mb-3">
             <div>
@@ -987,7 +990,7 @@
         <!--./Tab content single-->
         <!--Tab content single-->
         <div class="hidden">
-          <h2 class="font-primary font-semibold text-grey text-[1.68rem] mb-4 mt-4">Popular Countries</h2>
+          <h2 class="font-primary font-semibold text-grey text-[1.68rem] mb-4 mt-4">Discover Global</h2>
           <!--Accordion single-->
           <div class="mb-3">
             <div>
@@ -1949,4 +1952,8 @@
 <script setup lang="ts">
   const { data: countries } = await useFetch('https://www.airalo.com/api/v2/countries?type=popular')
   const firstFive = countries.value.slice(0,5)
+  const active = ref(-1)
+  const clicked = (index: number) => {
+    active.value = index
+  }
 </script>
