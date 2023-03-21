@@ -4,7 +4,7 @@
       <div class="text-center">
         <div class="inline-block bg-white rounded-lg p-[.625rem] shadow-xl relative z-50 -top-[1.56rem]">
           <ul class="flex">
-            <li v-for="(tab, i) in tabs" key="i" @click="active = i; fetchTabs()">
+            <li v-for="(tab, i) in tabs" :key="i" @click="active = i; fetchTabs()">
               <button
                 class="font-primary font-medium text-base rounded-md py-2 px-2 leading-none min-w-[5rem] md:min-w-[6.87rem]"
                 :class="active === i ? 'text-white bg-grey': 'text-light-grey'">

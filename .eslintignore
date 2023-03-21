@@ -1,0 +1,7 @@
+node_modules
+.nuxt*
+.output
+build
+**/*.json
+awardwinner
+Sazzad
