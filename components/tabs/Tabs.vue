@@ -7,7 +7,8 @@
             <li v-for="(tab, i) in tabs" :key="i" @click="active = i; fetchTabs()">
               <button
                 class="font-primary font-medium text-base rounded-md py-2 px-2 leading-none min-w-[5rem] md:min-w-[6.87rem]"
-                :class="active === i ? 'text-white bg-grey': 'text-light-grey'">
+                :class="active === i ? 'text-white bg-grey': 'text-light-grey'"
+              >
                 {{ tab }}
               </button>
             </li>
@@ -16,31 +17,32 @@
       </div>
 
       <div>
-        <TabsTabContent title="Popular Countries" v-if="active === 0">
-          <Accordion :items="tabsContent.countries" api-endpoint="countries"/>
+        <TabsTabContent v-if="active === 0" title="Popular Countries">
+          <Accordion :items="tabsContent.countries" api-endpoint="countries" />
           <div class="text-center pt-6">
             <button
-                v-if="!isShowingAll"
-                class="text-white border border-grey bg-grey rounded-md font-primary text-xs font-bold text-center inline-block px-[4rem] py-2 tracking-widest transition-all hover:bg-white hover:text-grey"
-                @click="onShowAllClick"
+              v-if="!isShowingAll"
+              class="text-white border border-grey bg-grey rounded-md font-primary text-xs font-bold text-center inline-block px-[4rem] py-2 tracking-widest transition-all hover:bg-white hover:text-grey"
+              @click="onShowAllClick"
             >
               SHOW ALL COUNTRIES
             </button>
           </div>
         </TabsTabContent>
 
-        <LazyTabsTabContent title="Regions" v-if="active === 1">
-          <Accordion :items="tabsContent.regions" api-endpoint="regions"/>
+        <LazyTabsTabContent v-if="active === 1" title="Regions">
+          <Accordion :items="tabsContent.regions" api-endpoint="regions" />
         </LazyTabsTabContent>
 
-        <LazyTabsTabContent title="Discover Global" v-if="active === 2">
+        <LazyTabsTabContent v-if="active === 2" title="Discover Global">
           <div class="pt-9 flex flex-wrap -mx-4">
             <Plan
-                v-for="p in tabsContent.world"
-                :key="p.id"
-                v-bind="p"
-                theme="world"
-                :country="`${p.operator.countries.length} Countries`"/>
+              v-for="p in tabsContent.world"
+              :key="p.id"
+              v-bind="p"
+              theme="world"
+              :country="`${p.operator.countries.length} Countries`"
+            />
           </div>
         </LazyTabsTabContent>
       </div>

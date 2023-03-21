@@ -1,13 +1,12 @@
 <template>
   <AccordionItem
-      v-for="(item, i) in items"
-      :key="i"
-      v-bind="item"
-      :active="active === i"
-      @clicked="active = i"
-      :api-endpoint="apiEndpoint"
-  >
-  </AccordionItem>
+    v-for="(item, i) in items"
+    :key="i"
+    v-bind="item"
+    :active="active === i"
+    :api-endpoint="apiEndpoint"
+    @clicked="active = i"
+  />
 </template>
 <script setup lang="ts">
 const active = ref(-1)
